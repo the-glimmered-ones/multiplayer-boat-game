@@ -9,8 +9,11 @@ import { ClientPacket, ClientPacketTypes } from "@shared/PacketTypes";
 import { PlayerLocation, GlobalClientLocation } from "@shared/Consts"; 
 import { ws } from "@src/shared";
 
+//fixed loading times by hosting this file online and importing it when needed
+
 const startWindow = window.parent //TODO this is in the iframe, so it should be treated and referenced as the child to prevent weirdness
 const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('renderCanvas');
+console.log(canvas)
 
 let engine: BABYLON.Engine | null = null;
 var boatRoot: BABYLON.TransformNode;
@@ -25,9 +28,8 @@ export function setJoinedWithName(value: boolean){
   setInterval(queueClientAction, 15)
 }
 
-//TODO: fix loading times
 
-window.addEventListener("load", () => {
+addEventListener("load", () => {
   window.parent.alert("shart") // YAYYYYYYYYY
   //console.log("game loaded")
   //requestWs.call(window.parent, window)
