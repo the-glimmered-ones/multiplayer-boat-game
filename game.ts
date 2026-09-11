@@ -7,8 +7,8 @@ import "babylonjs-serializers";
 import "babylonjs-gui";
 import { ClientPacket, ClientPacketTypes } from "@shared/PacketTypes";
 import { PlayerLocation, GlobalClientLocation } from "@shared/Consts"; 
-import { ws } from "@src/shared";
-
+//import { ws } from "@src/shared";
+var ws: WebSocket;
 //fixed loading times by hosting this file online and importing it when needed
 
 const startWindow = window.parent //TODO this is in the iframe, so it should be treated and referenced as the child to prevent weirdness
@@ -30,7 +30,7 @@ export function setJoinedWithName(value: boolean){
 
 
 addEventListener("load", () => {
-  window.parent.alert("shart") // YAYYYYYYYYY
+  //window.parent.alert("shart") // YAYYYYYYYYY ... why broke now
   //console.log("game loaded")
   //requestWs.call(window.parent, window)
 })
