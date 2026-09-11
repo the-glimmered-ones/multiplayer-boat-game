@@ -28,9 +28,9 @@ export function setJoinedWithName(value: boolean){
 //TODO: fix loading times
 
 addEventListener("load", () => {
-  //window.parent.alert("shart") // YAYYYYYYYYY
-  console.log("game loaded")
-  requestWs.call(window.parent, window)
+  window.parent.alert("shart") // YAYYYYYYYYY
+  //console.log("game loaded")
+  //requestWs.call(window.parent, window)
 })
 
 function requestWs(window: Window) {
