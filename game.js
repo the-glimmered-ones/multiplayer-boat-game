@@ -25,7 +25,6 @@ var ws;
 var BABYLON = window.BABYLON;
 var startWindow = window.parent;
 var canvas = document.getElementById("renderCanvas");
-console.log(canvas);
 var engine = null;
 var boatRoot;
 var boatObj;
@@ -37,7 +36,9 @@ function setJoinedWithName(value) {
   joinedWithName = true;
   setInterval(queueClientAction, 15);
 }
-addEventListener("load", () => {});
+addEventListener("load", () => {
+  window.parent.alert("shart");
+});
 var BOAT_Y_POSITION = 5;
 var BOAT_SCALE = new BABYLON.Vector3(5, 5, 5);
 var BOAT_STARTING_ROTATION = new BABYLON.Vector3(0, 4.712, 0);
