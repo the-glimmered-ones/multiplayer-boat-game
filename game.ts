@@ -27,6 +27,13 @@ export function setJoinedWithName(value: boolean){
 
 //TODO: fix loading times
 
+addEventListener("load", () => {
+  //window.parent.alert("shart") // YAYYYYYYYYY
+  requestWs.call(window.parent, window)
+})
+
+function requestWs(window: Window) {}
+
 const BOAT_Y_POSITION = 5
 const BOAT_SCALE = new BABYLON.Vector3(5,5,5)
 const BOAT_STARTING_ROTATION = new BABYLON.Vector3(0, 4.712, 0)
@@ -165,7 +172,7 @@ if (ws){//parent.getWebsocket()){
     // if (!createScene && mod.Playground?.CreateScene) createScene = (e,c)=>mod.Playground.CreateScene(e,c);
     if (!createScene) throw new Error('No createScene() export found.');
 
-    //console.log("made here")
+    console.log("made here")
 
     const scene = await (createWaterScene(engine, canvas));
     gameLoaded = true;
