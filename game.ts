@@ -32,7 +32,10 @@ addEventListener("load", () => {
   requestWs.call(window.parent, window)
 })
 
-function requestWs(window: Window) {}
+function requestWs(window: Window) {
+  let gameWindow = window 
+  console.log("game window is " + gameWindow)
+}
 
 const BOAT_Y_POSITION = 5
 const BOAT_SCALE = new BABYLON.Vector3(5,5,5)
